@@ -1,2 +1,7 @@
 # exp11mn
 Tarea 11 de Métodos Numéricos
+Q1) Con μ=1.5, el sistema parte en x(0)=2 y v(0)=0 y en los primeros 3-5 segundos la amplitud se va ajustando hasta estabilizarse. A diferencia de un oscilador armónico simple, aquí x(t) y v(t) no son senos puros y adoptan una forma de onda relajada/no sinusoidal porque el término μ(1-x²)x' actúa como amortiguamiento negativo cuando |x|<1 y positivo cuando |x|>1. Después del transitorio ambos oscilan de forma periódica estable con amplitud constante desfasados 90° entre sí, típico del ciclo límite.
+
+Q2) La gráfica converge desde la condición inicial (2,0) hacia una curva cerrada y asimétrica en vez de espiralar al origen. Esa curva cerrada es el ciclo límite característico de van der Pol para μ>0. Significa que sin importar la condición inicial el sistema siempre termina orbitando la misma trayectoria periódica. El amortiguamiento no lineal regula la energía inyectándola cuando la amplitud es pequeña y disipándola cuando es grande, hasta alcanzar oscilación de amplitud fija.
+
+Q3. Si se aumenta h de 0.05 a 0.5 o 1.0, el método deja de capturar la dinámica no lineal y diverge. Con pasos grandes el método sobreestima las pendientes k2/k3/k4, la energía numérica crece en cada paso y la amplitud explota en lugar de estabilizarse en ciclo límite. Esto confirma la limitación de RK4 al tener error global O(h⁴), así que requiere h pequeño para sistemas no lineales como van der Pol. Con h=0.05 el método es estable y reproduce el ciclo límite; con h≥0.5 pierde precisión y se vuelve inestable.
